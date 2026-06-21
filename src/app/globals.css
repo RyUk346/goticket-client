@@ -1,26 +1,72 @@
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sora: "Sora", system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/60 disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink-800 antialiased;
+    @apply dark:bg-ink-950 dark:text-ink-100;
+  }
+  .dark body {
+    background-image:
+      radial-gradient(60rem 60rem at 80% -10%, rgba(245, 158, 11, 0.08), transparent 60%),
+      radial-gradient(50rem 50rem at -10% 10%, rgba(56, 89, 138, 0.12), transparent 55%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-bold tracking-tight text-ink-900 dark:text-white;
+  }
+  ::selection {
+    @apply bg-brand-500/30;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-px { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+  .section-title { @apply font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink-900 dark:text-white; }
+  .section-kicker { @apply inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-300; }
+  .section-sub { @apply mt-3 max-w-2xl text-ink-500 dark:text-ink-300; }
+
+  .btn-primary { @apply btn bg-brand-500 text-ink-950 hover:bg-brand-400 hover:shadow-glow active:scale-[0.98]; }
+  .btn-outline { @apply btn border border-ink-300 text-ink-700 hover:border-brand-400 hover:text-brand-600 dark:border-ink-700 dark:text-ink-100 dark:hover:border-brand-400 dark:hover:text-brand-300; }
+  .btn-ghost { @apply btn text-ink-600 hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-white/5; }
+  .btn-danger { @apply btn bg-rose-500 text-white hover:bg-rose-600; }
+  .btn-sm { @apply px-3 py-1.5 text-xs rounded-lg; }
+
+  .card { @apply rounded-2xl border border-ink-200 bg-white shadow-card transition-all duration-300 dark:border-white/10 dark:bg-white/[0.03] dark:backdrop-blur; }
+  .card-hover { @apply hover:-translate-y-1 hover:border-brand-400/60 hover:shadow-glow; }
+
+  .input { @apply w-full rounded-xl border border-ink-300 bg-white px-4 py-2.5 text-sm text-ink-800 placeholder:text-ink-400 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30 dark:border-ink-700 dark:bg-ink-900/60 dark:text-ink-100 dark:placeholder:text-ink-500; }
+  .label { @apply mb-1.5 block text-sm font-medium text-ink-700 dark:text-ink-200; }
+
+  .badge-pending { @apply badge bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300; }
+  .badge-accepted { @apply badge bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300; }
+  .badge-approved { @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300; }
+  .badge-rejected { @apply badge bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300; }
+  .badge-paid { @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300; }
+
+  .link-muted { @apply text-ink-500 transition-colors hover:text-brand-600 dark:text-ink-300 dark:hover:text-brand-300; }
 }
+
+.swiper-pagination-bullet { background: #94a3b8 !important; }
+.swiper-pagination-bullet-active { background: #f59e0b !important; }
+.swiper-button-next, .swiper-button-prev { color: #f59e0b !important; }
+
+.scrollbar-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.4); border-radius: 9999px; }
