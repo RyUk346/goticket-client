@@ -3,7 +3,7 @@ import TicketsSection from "@/components/home/TicketsSection";
 import PopularRoutes from "@/components/home/PopularRoutes";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import CtaBand from "@/components/home/CtaBand";
-import { getAdvertisedTickets, getLatestTickets } from "@/app/api/public";
+import { getAdvertisedTickets, getLatestTickets } from "@/lib/api/public";
 
 export const dynamic = "force-dynamic";
 

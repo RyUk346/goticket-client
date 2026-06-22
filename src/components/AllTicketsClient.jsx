@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { getTickets } from "@/app/api/public";
+import { getTickets } from "@/lib/api/public";
 import { TRANSPORT_TYPES } from "@/lib/constants";
 import TicketCard from "@/components/TicketCard";
 import Pagination from "@/components/Pagination";
