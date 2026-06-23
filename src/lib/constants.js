@@ -10,7 +10,7 @@ export const NAV_LINKS = [
 ];
 
 export const ROLE_HOME = {
-  user: "/dashboard/user/profile",
-  vendor: "/dashboard/vendor/profile",
-  admin: "/dashboard/admin/profile",
+  user: "/dashboard/user",
+  vendor: "/dashboard/vendor",
+  admin: "/dashboard/admin",
 };
