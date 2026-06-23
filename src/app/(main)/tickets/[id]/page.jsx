@@ -86,7 +86,7 @@ export default async function TicketDetailsPage({ params }) {
             {!departed && !soldOut && (
               <div className="mt-5 rounded-xl bg-ink-50 p-3 dark:bg-white/5">
                 <p className="mb-2 text-center text-xs text-ink-500 dark:text-ink-300">Departs in</p>
-                <Countdown date={ticket.departureDate} />
+                <Countdown target={ticket.departureDate} />
               </div>
             )}
 
