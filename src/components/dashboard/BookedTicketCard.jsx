@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import { FiArrowRight, FiCalendar, FiCreditCard } from "react-icons/fi";
+import { FiArrowRight, FiCalendar } from "react-icons/fi";
 import Countdown from "@/components/Countdown";
 import CancelBookingButton from "./CancelBookingButton";
 import PdfTicketButton from "./PdfTicketButton";
+import PayNowButton from "./PayNowButton";
 import { formatCurrency, formatDate, isDeparted, statusBadgeClass } from "@/lib/utils";
 
 export default function BookedTicketCard({ booking }) {
@@ -52,11 +52,7 @@ export default function BookedTicketCard({ booking }) {
         <div className="mt-auto pt-4">
           {booking.status === "pending" && <CancelBookingButton bookingId={booking._id} />}
 
-          {booking.status === "accepted" && !departed && (
-            <Link href={`/dashboard/user/payment/${booking._id}`} className="btn-primary btn-sm w-full">
-              <FiCreditCard /> Pay now
-            </Link>
-          )}
+          {booking.status === "accepted" && !departed && <PayNowButton bookingId={booking._id} />}
           {booking.status === "accepted" && departed && (
             <p className="rounded-lg bg-rose-50 px-3 py-2 text-center text-xs font-medium text-rose-600 dark:bg-rose-500/10 dark:text-rose-300">
               Payment closed — departure passed
