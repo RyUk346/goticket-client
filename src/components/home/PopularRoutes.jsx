@@ -4,10 +4,10 @@ import SectionHeading from "@/components/SectionHeading";
 import { FiArrowRight } from "react-icons/fi";
 
 const ROUTES = [
-  { from: "Dhaka", to: "Cox's Bazar", img: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?auto=format&fit=crop&w=800&q=80", price: "from ৳1400" },
-  { from: "Dhaka", to: "Sylhet", img: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=800&q=80", price: "from ৳900" },
-  { from: "Chittagong", to: "Dhaka", img: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80", price: "from ৳1100" },
-  { from: "Dhaka", to: "Rajshahi", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80", price: "from ৳800" },
+  { from: "Dhaka", to: "Cox's Bazar", img: "https://images.unsplash.com/photo-1587302525159-2363f54affd4?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", price: "from ৳1400" },
+  { from: "Dhaka", to: "Sylhet", img: "https://images.unsplash.com/photo-1599137248983-e6061c27ec80?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", price: "from ৳900" },
+  { from: "Chittagong", to: "Dhaka", img: "https://images.unsplash.com/photo-1703944718960-49e1170a9c10?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", price: "from ৳1100" },
+  { from: "Dhaka", to: "Rajshahi", img: "https://www.bssnews.net/assets/news_photos/2023/01/25/image-107085-1674626638.jpg", price: "from ৳800" },
 ];
 
 export default function PopularRoutes() {
